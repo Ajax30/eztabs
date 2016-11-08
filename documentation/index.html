@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>EZ Tabs jQuery Plugin</title>
+	<meta name="description" content="A lightweight jquery plugin for making tabbed content.">
+	<meta name="keywords" content="HTML,CSS,JavaScript,jQuery,plugin">
+	<meta name="author" content="Razvan Zamfir">
+	<link href='https://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="docs.css" type="text/css" />
+	<link rel="stylesheet" href="tabs.css" type="text/css" />
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+	<script type="text/javascript" src="js/jquery.eztabs.min.js"></script>
+	<script type="text/javascript">
+	$(function() {
+		$('.tabset').eztabs({
+			animation:'slideLeftRight',
+			animationTime :  200 
+		});
+	});
+	</script>
+</head>
+<body>
+	<div id="plugin">
+		<h1>EZ Tabs jQuery Plugin</h1>
+		<div id="sidebar">
+      <iframe src="banner/instantaccordion.html" width="244" height="442" frameborder="0" scrolling="no" allowTransparency="true"></iframe>
+    </div>
+		<div id="content">	
+			<h2>Table of contents</h2>
+			<ol>
+				<li><a href="#about">About the EZ Tabs jQuery plugin</a></li>
+				<li><a href="#usage">How to use the plugin</a></li>
+				<li><a href="#options">Options</a></li>
+				<li><a href="#download">Download</a></li>
+				<li><a href="#demos">Demos</a></li>
+				<li><a href="#donate">Donations</a></li>
+				<li><a href="#contact">Contact me</a></li>
+				<li><a href="http://dcoder.eu/jquery-plugins/" target="_blank">More plugins</a></li>
+			</ol>
+
+			<div class="section first" id="about">
+				<h3>1. About the EZ Tabs jQuery plugin <a href="#">&#8593;</a></h3>
+				<p>The plugin was designed to help you design tabbed content boxes following a few simple steps.</p>
+
+				<h4>The MIT License (MIT)</h4>
+
+				<p>Copyright (c) 2015 Razvan Zamfir</p>
+
+				<p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</p>
+
+				<p>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</p>
+
+				<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
+
+			</div>
+
+			<div class="section" id="usage">
+				<h3>2. How to use the plugin <a href="#">&#8593;</a></h3>
+
+				<p>Basic usage:</p>
+
+				<p>1. Include the latest (or simply, your favorite) version of the jQuery library right after the closing </head> tag in your html document:</p>
+
+				<code>
+					&lt;script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"&gt;&lt;/script&gt;<script type="text/javascript" src="js/jquery.eztabs.min.js"></script>
+				</code>
+
+				<p>2. Bellow that line, add the <strong>jquery.eztabs.min.js</strong> file:</p>
+
+				<code>
+					&lt;script type="text/javascript" src="js/jquery.eztabs.min.js"&gt;&lt;/script&gt;
+				</code>
+
+				3. Include the plugin's stylesheet:
+
+				<code>
+					&lt;link rel="stylesheet" type="text/css" href="css/tabs.css"&gt;
+				</code>
+
+				<p>4. Make a div and give it any <strong>id</strong> or <strong>class</strong> you want; this div will contain all the html elements of the <strong>tab set</strong>. We will be using the class "tabset" in our example implementation. Inside this container div make an unordered list and asign it the class "ez_tabs". This list will serve as <strong>navigation</strong>.</p>
+
+				<p>5. Under the unordered list with the class of "ez_tabs", make the container of the elements for which you made the navigation at step 3. Asign the class "ez_content" to this container. Put the content inside this div.</p>
+
+				<p>6. Attach the plugin to the container of both the navigation and the content.</p>	
+
+				<code>
+				&lt;script type="text/javascript"&gt;
+				</code>
+				<code>
+				&nbsp;$(function() {
+				</code>
+				<code>
+				&nbsp;&nbsp;&nbsp;$('.tabset').eztabs();
+				</code>
+				<code>
+				&nbsp;});
+				</code>
+				<code>
+				&lt;/script"&gt;
+				</code>
+
+			</div>
+
+			<div class="section" id="options">
+				<h3>3. Options <a href="#">&#8593;</a></h3>
+				<table>
+						<thead>
+							<tr>
+								<th width="20%">Option</th>
+								<th width="20%">Type</th>
+								<th width="20%">Value</th>
+								<th width="40%">Role</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>tabsList</td>
+								<td>string</td>
+								<td>The default value is ".ez_tabs".</td>
+								<td>It represents the <strong>class name</strong> of the list of links you wish to use as the tabs. You can change this selector with any other you desire.</td>
+							</tr>
+							<tr>
+								<td>boxContainer</td>
+								<td>string</td>
+								<td>The default value is ".ez_content".</td>
+								<td>It represents the <strong>class name</strong> of the tabbed content's container. You can change this selector with any other you desire.</td>
+							</tr>
+							<tr>
+								<td>animation</td>
+								<td>string</td>
+								<td>none / slideUpDown / slideLeftRight</td>
+								<td>It sets the animation type. Default is "none".</td>
+							</tr>
+							<tr>
+								<td>animationTime</td>
+								<td>integer</td>
+								<td>500</td>
+								<td>The duration of the animation. Default is 500.</td>
+							</tr>
+							<tr>
+								<td>fullWidthTabs</td>
+								<td>boolean</td>
+								<td>true <em>or</em> false</td>
+								<td>If set to true, it makes the tabs streach 100% of the available space. Default is true.</td>
+							</tr>
+						</tbody>
+					</table>	
+			</div>
+			<div class="section" id="download">
+				<h3>4. Download <a href="#">&#8593;</a></h3>
+
+				<p>Click the button bellow to download the plugin files. Enjoy!</p>
+				<p>
+					<a href="http://bit.ly/1ijsdiw" class="button download">Download</a>
+				</p>
+				
+			</div>
+
+			<div class="section" id="demos">
+				<h3>5. Demos <a href="#">&#8593;</a></h3>
+
+				<p>1.Tabs aminated from left to right, in 200 milliseconds.</p>
+
+				<code>
+				&lt;script type="text/javascript"&gt;
+				</code>
+				<code>
+				&nbsp;$(function() {
+				</code>
+				<code>
+				&nbsp;&nbsp;&nbsp;$('.tabset').eztabs({
+				</code>
+				<code>
+				&nbsp;&nbsp;&nbsp;&nbsp;animation:'slideLeftRight',
+				</code>
+				<code>
+				&nbsp;&nbsp;&nbsp;&nbsp;animationTime :  200
+				</code>
+				<code> 
+				&nbsp;&nbsp;&nbsp;});
+				</code>
+				<code>
+				&nbsp;});
+				</code>
+				<code>
+				&lt;/script"&gt;
+				</code>
+
+				<div class="tabset">
+				  <ul class="ez_tabs">
+				    <li>Description</li>
+				    <li>Delivery</li>
+				    <li>Composition</li>
+				  </ul>
+				  <div class="ez_content">
+				    <article>
+				      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean molestie eros ac euismod pretium. Sed rhoncus lectus nec metus aliquet porta. Cras cursus justo odio, at tristique erat convallis id. Duis venenatis scelerisque justo. Maecenas iaculis malesuada lacus, id ultricies dui.</p>
+				    </article>
+				    <article>
+				      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean molestie eros ac euismod pretium. Sed rhoncus lectus nec metus aliquet porta. Cras cursus justo odio, at tristique erat convallis id. Duis venenatis scelerisque justo. Maecenas iaculis malesuada lacus, id ultricies dui. Nam scelerisque elit vitae lacus gravida, eget sodales nibh faucibus. Nulla elit sapien, molestie in mattis eget, consectetur vitae ipsum. Donec ut placerat magna, ut sodales tortor. Sed quis turpis tincidunt, fringilla felis ut, venenatis nisi. Proin egestas viverra nulla, nec dignissim nisi molestie eget.</p>
+				    </article>
+				    <article>
+				      <ul>
+				        <li>Cotton 80%</li>
+				        <li>Cotton 10%</li>
+				        <li>Elastan 10%</li>
+				      </ul>
+				    </article>
+				  </div>
+				</div>
+
+				<p>2. Custom navigation and content selectors. Default animation.</p>
+				<p>See the demo <a href="http://jsfiddle.net/2456x3bL/22/" target="_blank">HERE</a>.</p>
+
+				<p>3. Custom navigation and content selectors, tabs aligned to the left. Animation: slide up/down.</p>
+				<p>See the demo <a href="http://jsfiddle.net/p9gLcnjz/1/" target="_blank">HERE</a>.</p>
+			</div>
+
+			<div class="section" id="donate">
+				<h3>6. Make a donation <a href="#">&#8593;</a></h3>
+				<p>If this plugin has helped you, consider making a donation. Thank you!</p>
+				<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+					<input type="hidden" name="cmd" value="_s-xclick">
+					<input type="hidden" name="hosted_button_id" value="BA85Q4JM56HUY">
+					<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+					<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+				</form>
+
+			</div>
+
+			<div class="section" id="contact">
+				<h3>7. Contact me <a href="#">&#8593;</a></h3>
+				<p>Please help me make the plugin better. Write to me at <a href="mailto:razvan.zamfir80@gmail.com">razvan.zamfir80@gmail.com</a> about any bugs you may find or any improvement ideas you might have.</p>
+				<p>See my other plugins and comment <a href="http://dcoder.eu/jquery-plugins/" target="_blank">HERE</a>.</p>
+				<p>Thank you!</p>
+			</div>
+				
+		</div>
+		<div class="footer">
+	      <p>See my <a href="http://dcoder.eu/portfolio/" class="portfolio">portfolio</a></p>
+	    </div> 
+	</div>	
+</body>
+</html>
